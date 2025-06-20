@@ -7,7 +7,11 @@ import cors from "cors";
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://guileless-mandazi-188834.netlify.app",
+    methods: ["GET", "POST"],
+    credentials: true
+}));
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
